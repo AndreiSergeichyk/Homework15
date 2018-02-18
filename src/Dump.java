@@ -23,7 +23,7 @@ public class Dump {
         }
     }
 
-    public synchronized RobotParts getDetail() {
+    public RobotParts getDetail() {
         RobotParts detail = null;
 
         switch (random.nextInt(9)) {

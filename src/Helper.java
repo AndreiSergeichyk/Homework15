@@ -3,6 +3,8 @@ import java.util.List;
 
 public class Helper extends Thread {
 
+    public static final int COUNT_DETALS = 4;
+    public static final int MAX_NIGHTS = 100;
     private Dump dump;
     private List<RobotParts> basketOfHalper = new LinkedList();
     private Scientific scientific;
@@ -18,10 +20,10 @@ public class Helper extends Thread {
     @Override
     public void run() {
 
-        while (nightCount <= 100) {
+        while (nightCount <= MAX_NIGHTS) {
             System.out.println(getName() + " Зашел на свалку");
 
-            while (!(dump.getDetals().isEmpty()) && basketOfHalper.size() < 4) {
+            while (!(dump.getDetals().isEmpty()) && basketOfHalper.size() < COUNT_DETALS) {
                 synchronized (dump.getDetals()) {
                     if (!(dump.getDetals().isEmpty())) {
                         basketOfHalper.add(dump.getDetals().removeLast());
