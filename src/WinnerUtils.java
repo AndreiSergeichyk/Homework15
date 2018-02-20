@@ -6,11 +6,14 @@ public final class WinnerUtils {
     }
 
     public static Scientific getWinner(Scientific oneScientific, Scientific twoScientific) {
+        Scientific winnerScientific = null;
         if (Integer.compare(getCountRobots(oneScientific), getCountRobots(twoScientific)) > 0) {
-            return oneScientific;
+            winnerScientific = oneScientific;
         } else {
-            return twoScientific;
+            winnerScientific = twoScientific;
         }
+
+        return winnerScientific;
     }
 
     public static int getCountRobots(Scientific scientific) {
